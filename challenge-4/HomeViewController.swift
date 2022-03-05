@@ -11,34 +11,49 @@ class HomeViewController: UIViewController {
         
     @IBOutlet weak var table: UITableView!
     
-    let data = [Sunset(name: "Sunset 1", picture: "sunset1"), Sunset(name: "Sunset 2", picture: "sunset2")]
+    var pictures = [Picture]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Pictures"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         table.dataSource = self
         table.delegate = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pickPhoto))
     }
-}
-
-struct Sunset {
-    let name: String
-    let picture: String
+    
+    @objc func pickPhoto() {
+        let picker = UIImagePickerController()
+        
+        picker.allowsEditing = true
+        picker.delegate = self
+        picker.sourceType = .camera
+        
+        present(picker, animated: true)
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
 }
 
 //MARK: - UITableViewDataSource
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return pictures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sunset = data[indexPath.row]
+        let picture = pictures[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "picture", for: indexPath) as! CustomTableViewCell
         
-        cell.name.text = sunset.name
-        cell.picture.image = UIImage(named: sunset.picture)
+        cell.name.text = picture.name
+        cell.picture.image = UIImage(named: picture.image)
         
         return cell
     }
@@ -51,4 +66,15 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+}
+
+//MARK: - UIImagePickerControllerDelegate
+
+extension HomeViewController: UIImagePickerControllerDelegate {
+    
+}
+
+//MARK: - UINavigationControllerDelegate
+
+extension HomeViewController: UINavigationControllerDelegate {
 }

@@ -14,6 +14,7 @@
 		3D09321F27D3D6680051C4D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D09321E27D3D6680051C4D3 /* Assets.xcassets */; };
 		3D09322227D3D6680051C4D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D09322027D3D6680051C4D3 /* LaunchScreen.storyboard */; };
 		3D09322A27D3D90C0051C4D3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09322927D3D90C0051C4D3 /* CustomTableViewCell.swift */; };
+		3D09322C27D3E2560051C4D3 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09322B27D3E2560051C4D3 /* Picture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3D09322127D3D6680051C4D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D09322327D3D6680051C4D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D09322927D3D90C0051C4D3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3D09322B27D3E2560051C4D3 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3D09322027D3D6680051C4D3 /* LaunchScreen.storyboard */,
 				3D09322327D3D6680051C4D3 /* Info.plist */,
 				3D09322927D3D90C0051C4D3 /* CustomTableViewCell.swift */,
+				3D09322B27D3E2560051C4D3 /* Picture.swift */,
 			);
 			path = "challenge-4";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D09321A27D3D6670051C4D3 /* HomeViewController.swift in Sources */,
+				3D09322C27D3E2560051C4D3 /* Picture.swift in Sources */,
 				3D09321627D3D6670051C4D3 /* AppDelegate.swift in Sources */,
 				3D09322A27D3D90C0051C4D3 /* CustomTableViewCell.swift in Sources */,
 				3D09321827D3D6670051C4D3 /* SceneDelegate.swift in Sources */,
